@@ -1,0 +1,22 @@
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Author</th>
+    </tr>
+    <tr *ngFor="let book of books">
+      <td>{{book.title}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.author.name}}</td>
+      <td><button (click)="deleteBook(book)">X</button></td>
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="newTitle"/></td>
+      <td><input type="text" [(ngModel)]="newCategory"/></td>
+      <td><input type="text" [(ngModel)]="newAuthorName"/></td>
+      <td><button (click)="createBook()">+</button></td>
+    </tr>
+  </table>
+</div>
+

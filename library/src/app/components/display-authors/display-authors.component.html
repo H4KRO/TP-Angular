@@ -1,0 +1,16 @@
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    <tr *ngFor="let author of authors">
+      <td>{{author.name}}</td>
+      <td><button (click)="deleteAuthor(author)">X</button></td>
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="newAuthorName"/></td>
+      <td><button (click)="createAuthor()">+</button></td>
+    </tr>
+  </table>
+</div>
+
