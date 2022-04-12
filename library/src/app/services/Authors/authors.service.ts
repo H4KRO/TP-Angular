@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Author} from "../../models/Author/author.model";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,15 @@ export class AuthorsService {
 
   private authors : Author[] = []
 
-  constructor() { }
+  constructor(private http : HttpClient) {
+    this.http.get<Author[]>("/api/authors")
+      .subscribe(
+        (response) => {
+          console.log(response)
+          this.authors = response;
+        }
+      )
+  }
 
   public getAuthor(authorName: String) : Author {
     for(let author of this.authors) {
@@ -26,16 +35,26 @@ export class AuthorsService {
   }
 
   deleteAuthor(authorToDelete : Author) : void {
-    var tempAuthors = []
-    for(let author of this.authors) {
-      if (author.name != authorToDelete.name) {
-        tempAuthors.push(author)
-      }
-    }
-    this.authors = tempAuthors
+    this.http.delete("/api/authors/" + authorToDelete.id)
+      .subscribe(
+        (response) => {
+          var tempAuthors = []
+          for(let author of this.authors) {
+            if (author.name != authorToDelete.name) {
+              tempAuthors.push(author)
+            }
+          }
+          this.authors = tempAuthors
+        }
+      )
   }
 
   addAuthor(author: Author) {
-    this.authors.push(author)
+    this.http.post<Author>("/api/authors", author)
+      .subscribe(
+        (response) => {
+          this.authors.push(response)
+        }
+      )
   }
 }

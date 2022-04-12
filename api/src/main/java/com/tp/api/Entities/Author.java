@@ -1,5 +1,6 @@
 package com.tp.api.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 @Entity
 public class Author {
     @Id
+    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 

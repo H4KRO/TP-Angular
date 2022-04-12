@@ -25,4 +25,8 @@ public class AuthorService implements IAuthorService {
     public List<Author> findAll() {
         return (List<Author>) authorRepository.findAll();
     }
+
+    public void deleteOne(Long id) {
+        authorRepository.deleteById(id);
+    }
 }

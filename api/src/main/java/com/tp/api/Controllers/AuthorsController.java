@@ -7,8 +7,7 @@ import com.tp.api.Entities.Author;
 import com.tp.api.Services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +21,17 @@ public class AuthorsController {
     public String findAll() {
         List<Author> authors = authorService.findAll();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return authors.isEmpty() ? "NULL" : gson.toJson(authors);
+        return gson.toJson(authors);
+    }
+
+    @PostMapping("/authors")
+    public String insertOne(@RequestBody Author author) {
+        return authorService.save(author).toJson();
+    }
+
+    @DeleteMapping("/authors/{id}")
+    public String deleteOne(@PathVariable(value="id") Long id) {
+        authorService.deleteOne(id);
+        return "{\"status\": \"Success\"}";
     }
 }
