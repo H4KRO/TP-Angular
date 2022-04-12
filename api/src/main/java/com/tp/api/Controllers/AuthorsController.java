@@ -34,4 +34,10 @@ public class AuthorsController {
         authorService.deleteOne(id);
         return "{\"status\": \"Success\"}";
     }
+
+    @PatchMapping("/authors/{id}")
+    public String updateOne(@PathVariable(value="id") Long id, @RequestBody Author author) {
+        author.setId(id);
+        return authorService.save(author).toJson();
+    }
 }

@@ -13,7 +13,6 @@ export class AuthorsService {
     this.http.get<Author[]>("/api/authors")
       .subscribe(
         (response) => {
-          console.log(response)
           this.authors = response;
         }
       )
@@ -40,7 +39,7 @@ export class AuthorsService {
         (response) => {
           var tempAuthors = []
           for(let author of this.authors) {
-            if (author.name != authorToDelete.name) {
+            if (author.id != authorToDelete.id) {
               tempAuthors.push(author)
             }
           }
@@ -55,6 +54,13 @@ export class AuthorsService {
         (response) => {
           this.authors.push(response)
         }
+      )
+  }
+
+  updateAuthor(author: Author) {
+    this.http.patch<Author>("/api/authors/" + author.id, author)
+      .subscribe(
+        (response) => {}
       )
   }
 }

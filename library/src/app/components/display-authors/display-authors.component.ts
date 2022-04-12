@@ -22,5 +22,10 @@ export class DisplayAuthorsComponent implements OnInit {
 
   createAuthor() {
     this.authorsService.addAuthor(new Author(this.newAuthorName))
+    this.newAuthorName = ""
+  }
+
+  updateAuthor(author: Author) {
+    this.authorsService.updateAuthor(author)
   }
 }
