@@ -23,7 +23,7 @@ export class DisplayBooksComponent implements OnInit {
     this.refresh()
   }
 
-  public createBook() {
+  public createBook(): void {
     this.booksService.addBook(new Book(this.newTitle, this.authorsService.getAuthor(this.newAuthorName), this.newCategory))
     this.refresh()
   }

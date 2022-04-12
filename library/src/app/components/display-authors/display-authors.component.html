@@ -3,7 +3,7 @@
     <tr>
       <th>Name</th>
     </tr>
-    <tr *ngFor="let author of authors">
+    <tr *ngFor="let author of authorsService.getAuthors()">
       <td>{{author.name}}</td>
       <td><button (click)="deleteAuthor(author)">X</button></td>
     </tr>

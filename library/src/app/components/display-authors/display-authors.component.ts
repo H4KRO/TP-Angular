@@ -8,26 +8,19 @@ import {AuthorsService} from "../../services/Authors/authors.service";
   styleUrls: ['./display-authors.component.css']
 })
 export class DisplayAuthorsComponent implements OnInit {
-  public authors: Author[] = [];
   public newAuthorName: String = "";
 
-  constructor(private authorsService : AuthorsService) { }
-
-  ngOnInit(): void {
-    this.refresh()
+  constructor(public authorsService: AuthorsService) {
   }
 
-  deleteAuthor(author: Author) : void {
+  ngOnInit(): void {
+  }
+
+  deleteAuthor(author: Author): void {
     this.authorsService.deleteAuthor(author)
-    this.refresh()
   }
 
   createAuthor() {
     this.authorsService.addAuthor(new Author(this.newAuthorName))
-    this.refresh()
-  }
-
-  refresh() : void {
-    this.authors = this.authorsService.getAuthors()
   }
 }
