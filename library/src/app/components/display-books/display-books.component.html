@@ -5,10 +5,11 @@
       <th>Category</th>
       <th>Author</th>
     </tr>
-    <tr *ngFor="let book of books">
-      <td>{{book.title}}</td>
-      <td>{{book.category}}</td>
-      <td>{{book.author.name}}</td>
+    <tr *ngFor="let book of booksService.getBooks()">
+      <td><input [(ngModel)]="book.title"/></td>
+      <td><input [(ngModel)]="book.category"/></td>
+      <td><input [(ngModel)]="book.author"/></td>
+      <td><button (click)="updateBook(book)">S</button></td>
       <td><button (click)="deleteBook(book)">X</button></td>
     </tr>
     <tr>

@@ -28,15 +28,15 @@ public class BooksController {
         return bookService.save(book).toJson();
     }
 
-    @DeleteMapping("/books/{id}")
-    public String deleteOne(@PathVariable(value="id") Long id) {
-        bookService.deleteOne(id);
-        return "{\"status\": \"Success\"}";
-    }
-
     @PatchMapping("/books/{id}")
     public String updateOne(@PathVariable(value="id") Long id, @RequestBody Book book) {
         book.setId(id);
         return bookService.save(book).toJson();
+    }
+
+    @DeleteMapping("/books/{id}")
+    public String deleteOne(@PathVariable(value="id") Long id) {
+        bookService.deleteOne(id);
+        return "{\"status\": \"Success\"}";
     }
 }

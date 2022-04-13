@@ -19,22 +19,18 @@ export class DisplayBooksComponent implements OnInit {
 
   constructor(public router : Router, public booksService : BooksService, private authorsService : AuthorsService) { }
 
-  ngOnInit(): void {
-    this.refresh()
-  }
+  ngOnInit(): void {  }
 
   public createBook(): void {
-    this.booksService.addBook(new Book(this.newTitle, this.authorsService.getAuthor(this.newAuthorName), this.newCategory))
-    this.refresh()
+    this.booksService.addBook(new Book(this.newTitle, this.newAuthorName, this.newCategory))
   }
 
   public deleteBook(book : Book) : void {
     this.booksService.deleteBook(book)
-    this.refresh()
   }
 
-  private refresh() : void {
-    this.books = this.booksService.getBooks()
+  public updateBook(book : Book) : void {
+    this.booksService.updateBook(book);
   }
 
 }

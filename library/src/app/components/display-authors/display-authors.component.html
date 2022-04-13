@@ -4,9 +4,8 @@
       <th>Name</th>
     </tr>
     <tr *ngFor="let author of authorsService.getAuthors()">
-      <!-- <td>{{author.name}}</td> -->
       <td>
-        <input [(ngModel)]="author.name" />
+        <input [(ngModel)]="author.name"/>
       </td>
       <td><button (click)="updateAuthor(author)">S</button></td>
       <td><button (click)="deleteAuthor(author)">X</button></td>
