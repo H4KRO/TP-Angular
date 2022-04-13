@@ -11,12 +11,16 @@ import {BooksService} from "./services/Books/books.service";
 import {Author} from "./models/Author/author.model";
 import {AuthorsService} from "./services/Authors/authors.service";
 import { DisplayAuthorsComponent } from './components/display-authors/display-authors.component';
+import {AuthService} from "./services/Auth/auth.service";
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayBooksComponent,
-    DisplayAuthorsComponent
+    DisplayAuthorsComponent,
+    AuthComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,7 @@ import { DisplayAuthorsComponent } from './components/display-authors/display-au
     FormsModule,
     HttpClientModule,
   ],
-  providers: [BooksService, AuthorsService],
+  providers: [BooksService, AuthorsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
