@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Book} from "../../models/Book/book.model";
 import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../Auth/auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,15 @@ export class BooksService {
 
   private books : Book[] = []
 
-  constructor(private http : HttpClient) {
+  constructor(private http : HttpClient, private authSerice : AuthService) {
+    this.load();
+  }
+
+  public load() : void {
+    console.log("LOAD !")
+    if(!this.authSerice.isConnected()) {
+      return;
+    }
     this.http.get<Book[]>("/api/books")
       .subscribe(
         (response) => {

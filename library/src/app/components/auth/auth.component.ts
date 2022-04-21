@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../services/Auth/auth.service";
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  public username : string = "";
+  public password : string = "";
+
+  constructor(public authService : AuthService) { }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:8080",
+    "target": "http://localhost:8181",
     "secure": false,
     "pathRewrite": {
       "^/api": ""
@@ -10,9 +10,11 @@
   "/auth/*": {
     "target": "http://localhost:8080",
     "secure": false,
-    "pathRewrite": {
-      "^/auth": ""
-    },
     "changeOrigin": true
   },
+  "/sso/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true
+  }
 }

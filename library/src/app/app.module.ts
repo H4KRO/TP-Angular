@@ -19,7 +19,6 @@ import { AuthComponent } from './components/auth/auth.component';
     AppComponent,
     DisplayBooksComponent,
     DisplayAuthorsComponent,
-    AuthComponent,
     AuthComponent
   ],
   imports: [
