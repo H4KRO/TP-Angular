@@ -1,19 +1,26 @@
 <div>
-  <table>
-    <tr>
-      <th>Name</th>
-    </tr>
-    <tr *ngFor="let author of authorsService.getAuthors()">
-      <td>
-        <input [(ngModel)]="author.name"/>
-      </td>
-      <td><button (click)="updateAuthor(author)">S</button></td>
-      <td><button (click)="deleteAuthor(author)">X</button></td>
-    </tr>
-    <tr>
-      <td><input type="text" [(ngModel)]="newAuthorName"/></td>
-      <td><button (click)="createAuthor()">+</button></td>
-    </tr>
-  </table>
+  <div id="toto">Voici la liste des auteurs actuels : </div>
+  <div class="tableContainer">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Save </th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let author of authorsService.getAuthors()">
+        <td>
+          <input [(ngModel)]="author.name"/>
+        </td>
+        <td><button (click)="updateAuthor(author)">S</button></td>
+        <td><button (click)="deleteAuthor(author)">X</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="newAuthorName"/></td>
+        <td><button (click)="createAuthor()">+</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id= "next">Vous pouvez retrouver nos différentes catégories ici :</div>
 </div>
+
 

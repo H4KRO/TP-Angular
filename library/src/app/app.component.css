@@ -1,0 +1,9 @@
+#authors {margin-right: 70px; font-size : 40px; background-color: #22BB66 ; color:#FEFFB2}
+#books {margin-right : 70px; font-size : 40px; color: #FEFFB2; background-color: #22BB66}
+#authentication{font-size : 40px; color: #FEFFB2; background-color: #22BB66}
+.tableButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+}

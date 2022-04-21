@@ -1,0 +1,22 @@
+th                 { background-color : #22BB66; }
+th {width: 250px}
+th { vertical-align: center}
+
+
+/* Alternance de couleur sur les lignes */
+tr:nth-child(even) { background-color : #FEFFB2; }
+tr:nth-child(even) { text-align: center}
+tr:nth-child(odd)  { background-color : #CCFFAA; }
+tr:nth-child(odd) { text-align: center}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom : 80px;
+}
+
+#toto {margin-left : 50px; margin-bottom: 30px; margin-top: 45px; color: #ffffff; font-size : 40px }
+div {margin-left : 50px; margin-bottom: 30px; margin-top: 45px; color: #9de5a7}
+#next {color: #ffffff; font-size : 24px; margin-botton : 50px}
+
+

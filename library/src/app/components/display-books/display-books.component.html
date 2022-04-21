@@ -1,22 +1,27 @@
-<div>
+<div id= "add">
+  Ajouter un livre ou y apporter des modifications :
+</div>
+<div class="book ">
   <table>
     <tr>
       <th>Title</th>
       <th>Category</th>
       <th>Author</th>
+      <div id="save"><th>Save</th></div>
+      <th>Delete</th>
     </tr>
     <tr *ngFor="let book of booksService.getBooks()">
-      <td><input [(ngModel)]="book.title"/></td>
-      <td><input [(ngModel)]="book.category"/></td>
-      <td><input [(ngModel)]="book.author"/></td>
-      <td><button (click)="updateBook(book)">S</button></td>
-      <td><button (click)="deleteBook(book)">X</button></td>
+      <td><input id="book" [(ngModel)]="book.title"/></td>
+      <td><input id="category" [(ngModel)]="book.category"/></td>
+      <td><input id = "author" [(ngModel)]="book.author"/></td>
+      <td><button id = "update" (click)="updateBook(book)">Update</button></td>
+      <td><button id ="X" (click)="deleteBook(book)"> X</button></td>
     </tr>
     <tr>
-      <td><input type="text" [(ngModel)]="newTitle"/></td>
-      <td><input type="text" [(ngModel)]="newCategory"/></td>
-      <td><input type="text" [(ngModel)]="newAuthorName"/></td>
-      <td><button (click)="createBook()">+</button></td>
+      <td><input id="newTitle" type="text" [(ngModel)]="newTitle"/></td>
+      <td><input id="newCategory" type="text" [(ngModel)]="newCategory"/></td>
+      <td><input id="newAuthor" type="text" [(ngModel)]="newAuthorName"/></td>
+      <td><button id="add2" (click)="createBook()">Add</button></td>
     </tr>
   </table>
 </div>

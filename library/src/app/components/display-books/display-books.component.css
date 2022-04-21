@@ -1,0 +1,52 @@
+.book {
+  display: flex;
+  justify-content: center;
+  color : #CCFFAA;
+}
+#add{
+  margin-bottom: 50px;
+  color : floralwhite;
+}
+th                 { background-color : #22BB66; }
+th {width: 250px}
+th { vertical-align: center}
+tr:nth-child(even) { background-color : #FEFFB2; text-align: center }
+tr:nth-child(odd)  { background-color : #CCFFAA; text-align :center }
+
+#add2{
+  background-color: #FEFFB2;
+}
+#newAuthor{
+  background-color: #FEFFB2;
+}
+
+#newCategory{
+  background-color: #FEFFB2;
+}
+
+#newTitle{
+  background-color: #FEFFB2;
+}
+
+#author{
+  background-color: mediumaquamarine;
+  color : white;
+}
+
+#category{
+  background-color : mediumaquamarine;
+  color : white;
+}
+
+#book{
+  background-color: mediumaquamarine;
+  color : white;
+}
+
+#X{
+  font-weight: bold;
+  width: 80px;
+}
+#update{
+  width: 80px;
+}
